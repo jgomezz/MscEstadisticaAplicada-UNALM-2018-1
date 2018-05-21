@@ -120,36 +120,63 @@ var.test(LimaNorte.transito.data$Gasto2015,
 # mantenimiento de los puntos críticos de Lima Norte (1) y 
 # Lima Sur (2) en el año 2015. El intervalo es:
 
+## ????????????????????????? NO ES CORRECTA ????????????????
 install.packages("PropCIs")
 library("PropCIs")
 t.test(LimaNorte.transito.data$Gasto2015, LimaSur.transito.data$Gasto2015, conf.level = 0.97, paired = T)$conf
 ## la 2da parte no tiene respuesta
 # [1] -7.8540992 -0.2431008
 
-# Preg 5
-# -----------------------------------------
-hist(LimaEste.transito.data$Gasto2015)
+###############################################################
+#                         Preg 5                              #
+###############################################################
+# Mediante un histograma o gráfico de probabilidad, el analista de R&DGo 
+# Seguros, evaluó los datos de los gastos que realizó la municipalidad 
+# por mantenimiento de los puntos críticos de Lima Este en el año 2015 
+# y se puede apreciar que estos presentan una distribución aproximadamente 
+# ______ .Por lo que se puede asumir que estos datos provienen de una 
+# distribución _______.De acuerdo a la conclusión anterior estimó un 
+# intervalo al 97% de confianza para el promedio, la varianza y el 
+# coeficiente de variabilidad del gasto que realizó la municipalidad por 
+# mantenimiento de los puntos críticos de Lima Este en el año 2015, 
+# siendo este:  
+#  Para la media
+#  Para la varianza
+#  Para el coeficiente de variabilidad
 
-#media
+# Histograma
+hist(LimaEste.transito.data$Gasto2015) # Simetrica
+
+# Para la media
 t.test(LimaEste.transito.data$Gasto2015,alternative = "t", conf.level = 0.97)$conf
 #[1] 28.67003 34.80317
-#varianza
+
+# Para la varianza
 install.packages("EnvStats")
 library("EnvStats")
 varTest(LimaEste.transito.data$Gasto2015,alternative = "t", conf.level = 0.97)$conf
 #  63.26833 153.53929 
-# coeficiente de variabilidad
+
+# Para el coeficiente de variabilidad
 install.packages("DescTools")
 library("DescTools")
 ## Function CoefVar
 CoefVar(LimaEste.transito.data$Gasto2015,conf.level = 0.97)
-# est    low.ci    upr.ci 
+#       est    low.ci    upr.ci 
 # 0.3056859 0.2469101 0.4008661
 
-# Preg.  6
-# -----------------------------------------
+###############################################################
+#                         Preg 6                              #
+###############################################################
+# El analista estimó un intervalo de confianza del 98% para la 
+# diferencia del número medio de accidentes ocurridos durante 
+# los meses de enero a abril del 2017 en Lima Este(1) y 
+# Lima Sur(2) siendo este igual a:
+
 t.test(LimaEste.transito.data$NA., LimaSur.transito.data$NA., conf.level = 0.98)$conf
-# [1] -7.8540992 -0.2431008
+# [1] -0.5016496  1.5283163
+
+PoissonCI
 
 # Preg.  7
 # -----------------------------------------
