@@ -126,6 +126,8 @@ t.test(LimaNorte.transito.data$Gasto2015, LimaSur.transito.data$Gasto2015, conf.
 ## la 2da parte no tiene respuesta
 # [1] -7.8540992 -0.2431008
 
+## RPTA : [ -7.786 ; -0.31]
+
 ###############################################################
 #                         Preg 5                              #
 ###############################################################
