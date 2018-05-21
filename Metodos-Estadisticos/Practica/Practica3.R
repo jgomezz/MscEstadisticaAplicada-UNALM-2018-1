@@ -1,6 +1,6 @@
-######################################
-#        Practica No3
-######################################
+###############################################################
+#                         Practica No3                        #
+###############################################################
 
 # Define path file
 FILE_URL <- "https://raw.githubusercontent.com/jgomezz/MsEstadAplic_MetodosEstadisticos/master/data/practica/Practica3.csv"
@@ -89,7 +89,6 @@ add4ci(23,27+23, conf.level= 0.97)$conf.int
 ###############################################################
 #                         Preg 3                              #
 ###############################################################
-# -----------------------------------------
 # El analista estimó un intervalo del 97% de confianza para 
 # la diferencia de medias de los gastos realizados por mantenimiento 
 # de los puntos críticos de Lima Este en los años 2015 y 2016.
@@ -202,11 +201,19 @@ CoefVar(LimaEste.transito.data$Gasto2015,conf.level = 0.97)
 # (-1.59045, 0.563788) ==> (-0.563788, 1.59045)
 
 
-# Preg.  7
-# -----------------------------------------
+###############################################################
+#                         Preg 7                              #
+###############################################################
+# Diego Domínguez es un trabajador del Ministerio de Transportes, encargado de 
+# realizar el estudio conjuntamente con Ud. Diego le comentó que el número de 
+# accidentes de tránsito se ajusta a una distribución de Poisson y le solicitó 
+# que estime un intervalo del 98% de confianza para el número medio de accidentes
+# ocurridos durante los meses enero a abril del 2017 en Lima Sur.
+# El intervalo es:
+
 # 334
 head(LimaEste.transito.data)
-sum(LimaSur.transito.data$NA.) # 334
-length(LimaSur.transito.data$NA.) # 60
-poisson.test(334, conf.level = 0.98)$conf/60
+nroAccidentes <- sum(LimaSur.transito.data$NA.) # 334
+nroRegistros  <- length(LimaSur.transito.data$NA.) # 60
+poisson.test(nroAccidentes, conf.level = 0.98)$conf/nroRegistros
 # [1] 4.882671 6.317396
