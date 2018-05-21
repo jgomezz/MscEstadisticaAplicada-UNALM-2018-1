@@ -173,24 +173,33 @@ CoefVar(LimaEste.transito.data$Gasto2015,conf.level = 0.97)
 # los meses de enero a abril del 2017 en Lima Este(1) y 
 # Lima Sur(2) siendo este igual a:
 
-t.test(LimaEste.transito.data$NA., LimaSur.transito.data$NA., conf.level = 0.98)$conf
-# [1] -0.5016496  1.5283163
-# 
+# Como se cuenta la cantidad de accidentes, es un distribución 
+# de Poisson.
+# Igualmente como son 2 muestras, con R no se puede, se debe 
+# usar el Minitab
 
+# Opciones : Stat --> Basic Statistic --> 2-Sample Poisson Rate...
+
+# Salida :
+#
 # Test and CI for Two-Sample Poisson Rates: NA, PC 
+#
+#                  Total         Rate of
+# NA         Occurrences   N  Occurrence
+# Lima Sur           334  60     5.56667
+# Lima Este          304  50     6.08000
+#
+#
+# Difference = rate(Lima Sur) - rate(Lima Este)
+# Estimate for difference: -0.513333
+# 98% CI for difference: (-1.59045, 0.563788)
+# Test for difference = 0 (vs ≠ 0): Z = -1.11 P-Value = 0.268
+# 
+# Exact Test: P-Value = 0.283 
 
-                 Total         Rate of
-NA         Occurrences   N  Occurrence
-Lima Sur           334  60     5.56667
-Lima Este          304  50     6.08000
-
-
-Difference = rate(Lima Sur) - rate(Lima Este)
-Estimate for difference: -0.513333
-98% CI for difference: (-1.59045, 0.563788)
-Test for difference = 0 (vs ≠ 0): Z = -1.11 P-Value = 0.268
-
-Exact Test: P-Value = 0.283
+# Como nos piden : rate(Lima Este) - rate(Lima Sur)
+# ==> [a ; b]  ===> [-b ; -a] 
+# (-1.59045, 0.563788) ==> (-0.563788, 1.59045)
 
 
 # Preg.  7
