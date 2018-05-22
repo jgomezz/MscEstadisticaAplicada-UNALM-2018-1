@@ -122,9 +122,13 @@ var.test(LimaNorte.transito.data$Gasto2015,
 ## ????????????????????????? NO ES CORRECTA ????????????????
 install.packages("PropCIs")
 library("PropCIs")
-t.test(LimaNorte.transito.data$Gasto2015, LimaSur.transito.data$Gasto2015, conf.level = 0.97, paired = T)$conf
+t.test(LimaNorte.transito.data$Gasto2015, LimaSur.transito.data$Gasto2015, conf.level = 0.97)$conf
 ## la 2da parte no tiene respuesta
 # [1] -7.8540992 -0.2431008
+
+#Para la diferencia de medias
+t.test(dataLELN$Gasto2015~dataLELN$PC,conf.level=0.97)$conf
+
 
 ## RPTA : [ -7.786 ; -0.31]
 
